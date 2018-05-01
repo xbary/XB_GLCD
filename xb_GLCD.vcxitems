@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{25caf7f6-d874-4c55-915f-23c545f00cb2}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\XB_GLCD.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\XB_GLCD_S1D15710.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\XB_FONTARIALBLACK_40.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\XB_FONTARIALCE_15.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\XB_FONTCOMMODORE64H_8.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\XB_FONTCOMMODORE64_8.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\XB_FONTCOURIERNEWCE_12.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\XB_FONTSYSTEM_12.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\xb_Font_4x6.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\XB_GLCD.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\XB_GLCD_S1D15710.h" />
+  </ItemGroup>
+</Project>
