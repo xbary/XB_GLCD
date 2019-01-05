@@ -2,6 +2,7 @@
 #include "XB_GLCD_S1D15710.h"
 #include "xb_Font_4x6.h"
 
+#ifdef LCD_S1D15710_USE
 
 TXB_GLCD_S1D15710::TXB_GLCD_S1D15710()
 {
@@ -236,3 +237,4 @@ TColorIndx TXB_GLCD_S1D15710::LCD_GetPixel(_REG int32_t Ax, _REG int32_t Ay)
 	return (LCDBuffer[pgadr] >> (Ay - (pg << 3)) & 1);
 }
 
+#endif

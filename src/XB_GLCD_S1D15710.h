@@ -4,6 +4,8 @@
 #include <xb_board.h>
 #include "XB_GLCD.h"
 
+#ifdef LCD_S1D15710_USE
+
 #define CONTROLLER_S1D17710 1							//S1D15710= 1, S1D15705= 0
 #define LCD_S1D15710_WIDTH 219
 #define LCD_S1D15710_HEIGHT 60
@@ -154,4 +156,5 @@ protected:
 	void DrawLCDBuffer();
 };
 
+#endif
 #endif

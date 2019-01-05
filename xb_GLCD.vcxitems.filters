@@ -3,6 +3,7 @@
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)src\XB_GLCD.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\XB_GLCD_S1D15710.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\XB_GLCD_SSD1306.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)src\XB_GLCD.h" />
@@ -14,5 +15,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)src\XB_FONTCOMMODORE64H_8.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\XB_FONTCOURIERNEWCE_12.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\XB_FONTSYSTEM_12.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\XB_GLCD_SSD1306.h" />
   </ItemGroup>
 </Project>

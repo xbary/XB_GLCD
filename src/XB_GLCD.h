@@ -3,7 +3,7 @@
 
 #include <xb_board.h>
 
-#define _REG register
+
 typedef uint8_t TColorIndx;
 
 // Typ opisuj¹cy kolor RGB 
@@ -159,15 +159,15 @@ public:
 	void RectCorrect(_REG TRect *Ars, _REG TRect *Ard);
 	void TextRect(char *Atext, uint8_t Aendch, TRect *Arect, TTextFlags ATextFlags);
 private:
-	virtual void LCD_Init();
-	virtual void LCD_Backlight(_REG uint8_t value);
-	virtual void LCD_Clear();
-	virtual void LCD_PutPixel(_REG int32_t Ax, _REG int32_t Ay, _REG TColorIndx Acolor);
-	virtual TColorIndx LCD_GetPixel(_REG int32_t Ax, _REG int32_t Ay);
-	virtual void LCD_BeginPaint();
-	virtual void LCD_EndPaint();
-	virtual int32_t LCD_GetLCDWidth();
-	virtual int32_t LCD_GetLCDHeight();
+	virtual void LCD_Init() {};
+	virtual void LCD_Backlight(_REG uint8_t value) {};
+	virtual void LCD_Clear() {};
+	virtual void LCD_PutPixel(_REG int32_t Ax, _REG int32_t Ay, _REG TColorIndx Acolor) {};
+	virtual TColorIndx LCD_GetPixel(_REG int32_t Ax, _REG int32_t Ay) {};
+	virtual void LCD_BeginPaint() {};
+	virtual void LCD_EndPaint() {};
+	virtual int32_t LCD_GetLCDWidth() {};
+	virtual int32_t LCD_GetLCDHeight() {};
 
 
 };
