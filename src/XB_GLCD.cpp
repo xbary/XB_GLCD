@@ -933,7 +933,7 @@ void STR_Trim(_REG char *AText)
 	}
 }
 // ---------------------------------------------------------------------------------------------------------------------------
-void TXB_GLCD::TextToTextWrap(_REG char *AText, _REG char *ATextWrap, _REG uint32_t sizebuftextwrap, _REG int32_t AWidthRect, _REG TTextFlags ATextFlags)
+void TXB_GLCD::TextToTextWrap(_REG const char *AText, _REG char *ATextWrap, _REG uint32_t sizebuftextwrap, _REG int32_t AWidthRect, _REG TTextFlags ATextFlags)
 {
 	_REG uint8_t ch, wrap = 0;
 	int32_t indx_dw = 0, indx_sw = 0, indx_s = 0, indx_d = 0, wt = 0;
@@ -1110,7 +1110,7 @@ void TXB_GLCD::RectCorrect(_REG TRect *Ars, _REG TRect *Ard)
 	}
 }
 // ---------------------------------------------------------------------------------------------------------------------------
-void TXB_GLCD::TextRect(char *Atext, uint8_t Aendch, TRect *Arect, TTextFlags ATextFlags)
+void TXB_GLCD::TextRect(const char *Atext, uint8_t Aendch, TRect *Arect, TTextFlags ATextFlags)
 {
 	_REG TFontDef *FD = Font.FontDef;
 	if (FD == NULL) return;
@@ -1132,6 +1132,14 @@ void TXB_GLCD::TextRect(char *Atext, uint8_t Aendch, TRect *Arect, TTextFlags AT
 
 	SetRectMask(&rect, &lastmask);
 
+	if (ATextFlags & tfClearRect)
+	{
+		TColorIndx lc= SetPenColor(0);
+		FillRect(&rect);
+		SetPenColor(lc);
+	}
+	
+	
 	if (ATextFlags & tfBorderLeft)
 	{
 		SetPenPos(rect.left, rect.bottom);

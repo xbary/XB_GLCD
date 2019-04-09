@@ -3,7 +3,7 @@
 
 #include <xb_board.h>
 
-
+#define _REG
 typedef uint8_t TColorIndx;
 
 // Typ opisuj¹cy kolor RGB 
@@ -120,6 +120,7 @@ typedef uint32_t TTextFlags;
 #define tfSpacing2x     8192
 #define tfSpacing3x     (tfSpacing1x | tfSpacing2x)
 
+#define tfClearRect     16384
 
 class TXB_GLCD
 {
@@ -155,9 +156,9 @@ public:
 	int32_t CharWidth(_REG char Ach);
 	int32_t TextWidth(_REG char *Atext, _REG uint8_t Aendch);
 	int32_t TextHeight(_REG char *Atext);
-	void TextToTextWrap(_REG char *AText, _REG char *ATextWrap, _REG uint32_t sizebuftextwrap, _REG int32_t AWidthRect, _REG TTextFlags ATextFlags);
+	void TextToTextWrap(_REG const char *AText, _REG char *ATextWrap, _REG uint32_t sizebuftextwrap, _REG int32_t AWidthRect, _REG TTextFlags ATextFlags);
 	void RectCorrect(_REG TRect *Ars, _REG TRect *Ard);
-	void TextRect(char *Atext, uint8_t Aendch, TRect *Arect, TTextFlags ATextFlags);
+	void TextRect(const char *Atext, uint8_t Aendch, TRect *Arect, TTextFlags ATextFlags);
 private:
 	virtual void LCD_Init() {};
 	virtual void LCD_Backlight(_REG uint8_t value) {};
